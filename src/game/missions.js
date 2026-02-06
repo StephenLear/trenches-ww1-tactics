@@ -691,6 +691,190 @@ export const MISSIONS = {
       { x: 1, y: 3, type: 'crater' }, { x: 3, y: 3, type: 'crater' }, { x: 5, y: 3, type: 'crater' },
       { x: 2, y: 2, type: 'crater' }, { x: 4, y: 2, type: 'crater' }
     ]
+  },
+  21: {
+    id: 21,
+    name: "Christmas Truce",
+    location: "Ypres Salient, Belgium",
+    date: "December 25, 1914",
+    weather: 'snow',
+    briefing: "An unofficial ceasefire has broken out along parts of the front. But command insists we maintain vigilance. A German patrol is testing our lines - engage only if necessary, but protect your position. Perhaps some humanity remains in this war.",
+    objective: "Hold your position",
+    specialVictory: 'survive_turns',
+    turnsToSurvive: 5,
+    victoryLog: "The day passed. Some men exchanged gifts with the enemy. For one day, we remembered we were all human. Tomorrow, the war resumes.",
+    defeatLog: "The truce broke down. Shots were fired, men died on Christmas Day. The war shows no mercy.",
+    diaryEntry: {
+      before: "December 25th, 1914\n\nChristmas. Snow falls on No Man's Land. Last night, the Germans sang 'Stille Nacht' and we answered with carols. This morning, men from both sides met in the middle. Shared cigarettes. But officers are nervous. We must stay alert.",
+      afterVictory: "December 26th, 1914\n\nWe held our position without bloodshed. Some lads played football with the Germans. For one blessed day, the guns were silent. I'll never forget it.",
+      afterDefeat: "December 26th, 1914\n\nIt couldn't last. Someone fired, and the truce ended in blood. Even Christmas cannot stop this madness."
+    },
+    units: [
+      { id: 1, type: 'infantry', team: 'player', x: 2, y: 6 },
+      { id: 2, type: 'infantry', team: 'player', x: 4, y: 6 },
+      { id: 3, type: 'machinegun', team: 'player', x: 3, y: 7 },
+      { id: 4, type: 'officer', team: 'player', x: 3, y: 6 },
+      { id: 5, type: 'infantry', team: 'enemy', x: 2, y: 1 },
+      { id: 6, type: 'infantry', team: 'enemy', x: 4, y: 1 },
+      { id: 7, type: 'officer', team: 'enemy', x: 3, y: 0 }
+    ],
+    terrain: [
+      { x: 1, y: 6, type: 'trench' }, { x: 2, y: 6, type: 'trench' }, { x: 3, y: 6, type: 'trench' },
+      { x: 4, y: 6, type: 'trench' }, { x: 5, y: 6, type: 'trench' },
+      { x: 1, y: 1, type: 'trench' }, { x: 2, y: 1, type: 'trench' }, { x: 3, y: 1, type: 'trench' },
+      { x: 4, y: 1, type: 'trench' }, { x: 5, y: 1, type: 'trench' },
+      { x: 2, y: 3, type: 'barbed_wire' }, { x: 3, y: 3, type: 'barbed_wire' }, { x: 4, y: 3, type: 'barbed_wire' },
+      { x: 2, y: 4, type: 'barbed_wire' }, { x: 3, y: 4, type: 'barbed_wire' }, { x: 4, y: 4, type: 'barbed_wire' }
+    ]
+  },
+  22: {
+    id: 22,
+    name: "Siege of Kut",
+    location: "Kut-al-Amara, Mesopotamia",
+    date: "January 1916",
+    weather: 'clear',
+    briefing: "Our garrison at Kut is surrounded by Ottoman forces. Supplies are running out. Break through the siege lines and reach the besieged troops before they're forced to surrender!",
+    objective: "Break through to the garrison",
+    specialVictory: 'capture_objectives',
+    victoryLog: "We broke through! The garrison is relieved. The men of Kut will live to fight another day.",
+    defeatLog: "The relief force failed. Kut must surrender. Thousands march into Ottoman captivity.",
+    diaryEntry: {
+      before: "January 15th, 1916\n\nGeneral Townshend's force is trapped at Kut. Starving, diseased, but still fighting. We're the relief column - fight through the Ottoman lines or watch our countrymen die.",
+      afterVictory: "January 20th, 1916\n\nWe made it through! The look on those men's faces when they saw us... we saved them from a terrible fate.",
+      afterDefeat: "January 20th, 1916\n\nWe couldn't break through. Kut has fallen. The prisoners march into the desert. Few will return."
+    },
+    units: [
+      { id: 1, type: 'infantry', team: 'player', x: 1, y: 7 },
+      { id: 2, type: 'infantry', team: 'player', x: 3, y: 7 },
+      { id: 3, type: 'cavalry', team: 'player', x: 5, y: 7 },
+      { id: 4, type: 'artillery', team: 'player', x: 2, y: 6 },
+      { id: 5, type: 'officer', team: 'player', x: 3, y: 6 },
+      { id: 6, type: 'infantry', team: 'enemy', x: 2, y: 3 },
+      { id: 7, type: 'infantry', team: 'enemy', x: 4, y: 3 },
+      { id: 8, type: 'machinegun', team: 'enemy', x: 3, y: 2 },
+      { id: 9, type: 'infantry', team: 'enemy', x: 1, y: 1 },
+      { id: 10, type: 'infantry', team: 'enemy', x: 5, y: 1 }
+    ],
+    terrain: [
+      { x: 2, y: 0, type: 'objective' }, { x: 3, y: 0, type: 'objective' }, { x: 4, y: 0, type: 'objective' },
+      { x: 1, y: 3, type: 'trench' }, { x: 2, y: 3, type: 'trench' }, { x: 3, y: 3, type: 'trench' },
+      { x: 4, y: 3, type: 'trench' }, { x: 5, y: 3, type: 'trench' },
+      { x: 0, y: 4, type: 'mud' }, { x: 1, y: 4, type: 'mud' }, { x: 6, y: 4, type: 'mud' }, { x: 7, y: 4, type: 'mud' },
+      { x: 2, y: 5, type: 'crater' }, { x: 5, y: 5, type: 'crater' }
+    ]
+  },
+  23: {
+    id: 23,
+    name: "Zeppelin Raid",
+    location: "London, England",
+    date: "September 1916",
+    weather: 'night',
+    briefing: "German Zeppelins are bombing London! Our anti-aircraft batteries and night fighters must bring them down before they devastate the city. Protect the civilians!",
+    objective: "Destroy all Zeppelins",
+    victoryLog: "The Zeppelins burn! London is saved. The terror weapons have been defeated by courage and skill.",
+    defeatLog: "The bombs fell on London. Fires rage through the city. The Zeppelins escaped into the night.",
+    diaryEntry: {
+      before: "September 2nd, 1916\n\nAir raid warning! The Zeppelins are coming - those great silver monsters in the sky. Our searchlights sweep the darkness. We have to stop them before they reach the city.",
+      afterVictory: "September 3rd, 1916\n\nWe got them! Saw one catch fire and fall like a flaming comet. The people cheered in the streets. The sky belongs to us now.",
+      afterDefeat: "September 3rd, 1916\n\nThey bombed the East End. Homes destroyed, families killed. We couldn't stop them all."
+    },
+    units: [
+      { id: 1, type: 'artillery', team: 'player', x: 1, y: 7 },
+      { id: 2, type: 'artillery', team: 'player', x: 4, y: 7 },
+      { id: 3, type: 'artillery', team: 'player', x: 6, y: 7 },
+      { id: 4, type: 'scout', team: 'player', x: 3, y: 6 },
+      { id: 5, type: 'infantry', team: 'player', x: 2, y: 6 },
+      { id: 6, type: 'infantry', team: 'enemy', x: 1, y: 0 },
+      { id: 7, type: 'infantry', team: 'enemy', x: 4, y: 0 },
+      { id: 8, type: 'infantry', team: 'enemy', x: 6, y: 1 }
+    ],
+    terrain: [
+      { x: 0, y: 7, type: 'objective' }, { x: 3, y: 7, type: 'objective' }, { x: 7, y: 7, type: 'objective' },
+      { x: 2, y: 4, type: 'crater' }, { x: 5, y: 4, type: 'crater' },
+      { x: 1, y: 2, type: 'crater' }, { x: 6, y: 3, type: 'crater' }
+    ]
+  },
+  24: {
+    id: 24,
+    name: "Caporetto",
+    location: "Isonzo Front, Italy",
+    date: "October 24, 1917",
+    weather: 'fog',
+    briefing: "The combined German-Austrian offensive has smashed through Italian lines! Fight a desperate rearguard action to allow the army to retreat. Every minute you hold buys time for thousands to escape.",
+    objective: "Survive the onslaught (7 turns)",
+    specialVictory: 'survive_turns',
+    turnsToSurvive: 7,
+    victoryLog: "We held long enough! The Italian army has escaped across the Piave. The line stabilizes. Italy fights on.",
+    defeatLog: "The rearguard collapsed too quickly. The retreat became a rout. Caporetto will be remembered as a disaster.",
+    diaryEntry: {
+      before: "October 24th, 1917\n\nThey came out of the fog - German stormtroopers, Austrian infantry, endless waves. The front collapsed. Now we're the rearguard. Hold them back or watch the whole army die.",
+      afterVictory: "October 30th, 1917\n\nWe bought them time. The army escaped, regrouped. Italy will not fall. Our sacrifice meant something.",
+      afterDefeat: "October 30th, 1917\n\nWe couldn't hold them. The retreat became chaos. So many captured, so many dead. Caporetto haunts us."
+    },
+    units: [
+      { id: 1, type: 'infantry', team: 'player', x: 1, y: 6 },
+      { id: 2, type: 'infantry', team: 'player', x: 3, y: 6 },
+      { id: 3, type: 'infantry', team: 'player', x: 5, y: 6 },
+      { id: 4, type: 'machinegun', team: 'player', x: 2, y: 7 },
+      { id: 5, type: 'machinegun', team: 'player', x: 4, y: 7 },
+      { id: 6, type: 'officer', team: 'player', x: 3, y: 7 },
+      { id: 7, type: 'infantry', team: 'enemy', x: 1, y: 0 },
+      { id: 8, type: 'infantry', team: 'enemy', x: 3, y: 0 },
+      { id: 9, type: 'infantry', team: 'enemy', x: 5, y: 0 },
+      { id: 10, type: 'infantry', team: 'enemy', x: 2, y: 1 },
+      { id: 11, type: 'infantry', team: 'enemy', x: 4, y: 1 },
+      { id: 12, type: 'cavalry', team: 'enemy', x: 6, y: 1 },
+      { id: 13, type: 'officer', team: 'enemy', x: 3, y: 1 }
+    ],
+    terrain: [
+      { x: 0, y: 6, type: 'trench' }, { x: 1, y: 6, type: 'trench' }, { x: 2, y: 6, type: 'trench' },
+      { x: 3, y: 6, type: 'trench' }, { x: 4, y: 6, type: 'trench' }, { x: 5, y: 6, type: 'trench' },
+      { x: 1, y: 4, type: 'mountain' }, { x: 2, y: 4, type: 'mountain' },
+      { x: 5, y: 4, type: 'mountain' }, { x: 6, y: 4, type: 'mountain' },
+      { x: 0, y: 3, type: 'mountain' }, { x: 7, y: 3, type: 'mountain' },
+      { x: 3, y: 3, type: 'crater' }, { x: 4, y: 3, type: 'crater' }
+    ]
+  },
+  25: {
+    id: 25,
+    name: "Return to Peace",
+    location: "Western Front",
+    date: "November 1918",
+    weather: 'clear',
+    briefing: "The final battle. Push the enemy back one last time. After four years of hell, this is it - the war to end all wars reaches its conclusion. Make it count. Make it mean something.",
+    objective: "Achieve total victory",
+    victoryLog: "Victory! The Great War is over. 17 million dead, empires fallen, the world forever changed. We survived. Never again.",
+    defeatLog: "So close to the end... but the final push failed. The war continues, but we know - it cannot last much longer.",
+    diaryEntry: {
+      before: "November 10th, 1918\n\nRumors of armistice. Kaiser fled. German army retreating everywhere. One final push and it's over. Four years of mud, blood, and death - ending tomorrow. Let's finish this.",
+      afterVictory: "November 11th, 1918\n\nIt's over. We won. I'm going home. To everyone who didn't make it - I'll never forget you. Never.",
+      afterDefeat: "November 11th, 1918\n\nThe attack failed, but it doesn't matter. The armistice is signed anyway. We're going home. The war is over."
+    },
+    units: [
+      { id: 1, type: 'infantry', team: 'player', x: 0, y: 7 },
+      { id: 2, type: 'infantry', team: 'player', x: 2, y: 7 },
+      { id: 3, type: 'infantry', team: 'player', x: 4, y: 7 },
+      { id: 4, type: 'tank', team: 'player', x: 1, y: 6 },
+      { id: 5, type: 'tank', team: 'player', x: 3, y: 6 },
+      { id: 6, type: 'cavalry', team: 'player', x: 5, y: 6 },
+      { id: 7, type: 'artillery', team: 'player', x: 6, y: 7 },
+      { id: 8, type: 'sniper', team: 'player', x: 7, y: 6 },
+      { id: 9, type: 'medic', team: 'player', x: 2, y: 6 },
+      { id: 10, type: 'officer', team: 'player', x: 3, y: 7 },
+      { id: 11, type: 'infantry', team: 'enemy', x: 2, y: 1 },
+      { id: 12, type: 'infantry', team: 'enemy', x: 4, y: 1 },
+      { id: 13, type: 'machinegun', team: 'enemy', x: 3, y: 0 },
+      { id: 14, type: 'machinegun', team: 'enemy', x: 5, y: 1 },
+      { id: 15, type: 'artillery', team: 'enemy', x: 1, y: 0 }
+    ],
+    terrain: [
+      { x: 1, y: 0, type: 'objective' }, { x: 3, y: 0, type: 'objective' }, { x: 5, y: 0, type: 'objective' },
+      { x: 1, y: 2, type: 'trench' }, { x: 2, y: 2, type: 'trench' }, { x: 3, y: 2, type: 'trench' },
+      { x: 4, y: 2, type: 'trench' }, { x: 5, y: 2, type: 'trench' },
+      { x: 2, y: 3, type: 'barbed_wire' }, { x: 3, y: 3, type: 'barbed_wire' }, { x: 4, y: 3, type: 'barbed_wire' },
+      { x: 1, y: 4, type: 'crater' }, { x: 3, y: 4, type: 'crater' }, { x: 5, y: 4, type: 'crater' },
+      { x: 0, y: 5, type: 'crater' }, { x: 6, y: 5, type: 'crater' }
+    ]
   }
 };
 
@@ -716,7 +900,12 @@ const MISSION_ALIGNMENTS = {
   17: { defaultSide: 'entente', centralBriefing: "Hundreds of British tanks approach through the fog! Man the anti-tank guns and hold the Hindenburg Line. These iron beasts must be stopped!" },
   18: { defaultSide: 'entente', centralBriefing: "American Marines are attacking Belleau Wood! Hold the forest at all costs - stop the Americans before they reach the Marne!" },
   19: { defaultSide: 'entente', centralBriefing: "A million Americans are advancing through the Argonne! Execute a fighting retreat - every day we hold delays their advance toward Germany." },
-  20: { defaultSide: 'entente', centralBriefing: "The armistice is signed - the war ends at 11:00 AM! But our enemies still attack. Survive until the eleventh hour and hold the line until peace comes." }
+  20: { defaultSide: 'entente', centralBriefing: "The armistice is signed - the war ends at 11:00 AM! But our enemies still attack. Survive until the eleventh hour and hold the line until peace comes." },
+  21: { defaultSide: 'entente', centralBriefing: "Christmas Day. An unofficial truce has spread along parts of the front. Some men have even exchanged gifts. But orders are orders - maintain vigilance. If the British attack, we defend." },
+  22: { defaultSide: 'entente', centralBriefing: "The British relief force approaches Kut! Hold the siege lines. If they break through, months of siege warfare will be wasted. Let them starve." },
+  23: { defaultSide: 'central', centralBriefing: "Launch the Zeppelin raid on London! Bring terror to the British homeland. Avoid their searchlights and anti-aircraft guns - bomb the docks and industrial areas!" },
+  24: { defaultSide: 'central', centralBriefing: "The offensive at Caporetto begins! Smash through the Italian lines with stormtrooper tactics. Break them completely - advance to the Piave!" },
+  25: { defaultSide: 'entente', centralBriefing: "The final battle. Germany fights a desperate rearguard. Hold as long as possible - every hour delays the inevitable surrender. Fight for honor." }
 };
 
 // Grid size for position flipping

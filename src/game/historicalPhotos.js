@@ -319,6 +319,11 @@ export const MISSION_PHOTOS = {
   18: ['passchendaele_mud', 'ypres_ruins'],
   19: ['tank_crew', 'infantry_advance'],
   20: ['armistice_day', 'victory_parade'],
+  21: ['trench_life_1', 'rest_billets'],
+  22: ['artillery_barrage', 'infantry_advance'],
+  23: ['staff_meeting', 'artillery_barrage'],
+  24: ['passchendaele_mud', 'stretcher_bearers'],
+  25: ['victory_parade', 'armistice_day'],
 };
 
 // Faction-specific photos for diary
