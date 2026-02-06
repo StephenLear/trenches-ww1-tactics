@@ -13,6 +13,7 @@ import {
   SafeAreaView,
   StatusBar,
   Modal,
+  Image,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { COLORS, FONT_SIZES, SPACING, RADIUS, SHADOWS } from '../styles/colors';
@@ -225,9 +226,17 @@ const WarDiaryScreen = ({ navigation }) => {
             >
               {factionPhotos.map((photo, index) => (
                 <View key={photo.id || index} style={styles.photoCard}>
-                  <View style={styles.photoFrame}>
-                    <Text style={styles.photoEmoji}>{photo.placeholder}</Text>
-                  </View>
+                  {photo.image ? (
+                    <Image
+                      source={photo.image}
+                      style={styles.photoImage}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View style={styles.photoFrame}>
+                      <Text style={styles.photoEmoji}>{photo.placeholder}</Text>
+                    </View>
+                  )}
                   <Text style={styles.photoTitle}>{photo.title}</Text>
                   <Text style={styles.photoYear}>{photo.year}</Text>
                 </View>
@@ -592,6 +601,15 @@ const styles = StyleSheet.create({
     width: 140,
     marginHorizontal: SPACING.small,
     alignItems: 'center',
+  },
+  photoImage: {
+    width: 120,
+    height: 90,
+    borderRadius: 4,
+    marginBottom: SPACING.small,
+    borderWidth: 3,
+    borderColor: '#5c3d1a',
+    backgroundColor: '#2a2015',
   },
   photoFrame: {
     width: 120,

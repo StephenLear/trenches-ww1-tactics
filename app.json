@@ -17,7 +17,6 @@
       "bundleIdentifier": "com.trenches.ww1tactics",
       "buildNumber": "1",
       "infoPlist": {
-        "NSUserTrackingUsageDescription": "This identifier is used to provide personalized ads.",
         "ITSAppUsesNonExemptEncryption": false
       },
       "config": {
@@ -39,14 +38,6 @@
     "plugins": [
       "expo-asset"
     ],
-    "extra": {
-      "eas": {
-        "projectId": "your-project-id"
-      }
-    },
-    "owner": "your-expo-username",
-    "privacy": "public",
-    "primaryColor": "#5c4033",
     "updates": {
       "fallbackToCacheTimeout": 0
     },

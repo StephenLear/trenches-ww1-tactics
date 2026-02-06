@@ -12,6 +12,7 @@ import {
   ScrollView,
   SafeAreaView,
   StatusBar,
+  Image,
 } from 'react-native';
 import { COLORS, FONT_SIZES, SPACING, RADIUS, SHADOWS } from '../styles/colors';
 import { commonStyles } from '../styles/commonStyles';
@@ -164,9 +165,17 @@ const BriefingScreen = ({ route, navigation }) => {
             >
               {missionPhotos.map((photo, index) => (
                 <View key={photo.id || index} style={styles.photoItem}>
-                  <View style={styles.photoPlaceholder}>
-                    <Text style={styles.photoEmoji}>{photo.placeholder}</Text>
-                  </View>
+                  {photo.image ? (
+                    <Image
+                      source={photo.image}
+                      style={styles.photoImage}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View style={styles.photoPlaceholder}>
+                      <Text style={styles.photoEmoji}>{photo.placeholder}</Text>
+                    </View>
+                  )}
                   <Text style={styles.photoTitle}>{photo.title}</Text>
                   <Text style={styles.photoDescription}>{photo.description}</Text>
                   <Text style={styles.photoMeta}>
@@ -471,6 +480,13 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.backgroundDark,
     borderRadius: RADIUS.medium,
     padding: SPACING.medium,
+  },
+  photoImage: {
+    width: '100%',
+    height: 100,
+    borderRadius: RADIUS.small,
+    marginBottom: SPACING.small,
+    backgroundColor: '#2a2520',
   },
   photoPlaceholder: {
     width: '100%',
