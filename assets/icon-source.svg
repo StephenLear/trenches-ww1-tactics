@@ -1,0 +1,79 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - Dark military khaki -->
+  <rect width="1024" height="1024" fill="#3d3d29"/>
+
+  <!-- Outer border - brass/bronze color -->
+  <rect x="20" y="20" width="984" height="984" rx="180" fill="none" stroke="#8b7355" stroke-width="40"/>
+
+  <!-- Inner background circle -->
+  <circle cx="512" cy="512" r="420" fill="#2a2a1f"/>
+
+  <!-- Trench silhouette at bottom -->
+  <path d="M92 750 L92 850 L200 850 L200 780 L280 780 L280 850 L380 850 L380 800 L450 800 L450 850 L550 850 L550 780 L650 780 L650 850 L750 850 L750 800 L820 800 L820 850 L932 850 L932 750 Z" fill="#1a1a14"/>
+
+  <!-- Barbed wire -->
+  <g stroke="#555544" stroke-width="3" fill="none">
+    <path d="M100 720 Q200 700 300 720 Q400 740 500 720 Q600 700 700 720 Q800 740 900 720"/>
+    <path d="M120 740 Q220 760 320 740 Q420 720 520 740 Q620 760 720 740 Q820 720 920 740"/>
+    <!-- Wire barbs -->
+    <g stroke-width="2">
+      <line x1="150" y1="710" x2="160" y2="730"/>
+      <line x1="250" y1="730" x2="260" y2="710"/>
+      <line x1="350" y1="710" x2="360" y2="730"/>
+      <line x1="450" y1="730" x2="460" y2="710"/>
+      <line x1="550" y1="710" x2="560" y2="730"/>
+      <line x1="650" y1="730" x2="660" y2="710"/>
+      <line x1="750" y1="710" x2="760" y2="730"/>
+      <line x1="850" y1="730" x2="860" y2="710"/>
+    </g>
+  </g>
+
+  <!-- Central helmet (Brodie style - British) -->
+  <ellipse cx="512" cy="380" rx="200" ry="80" fill="#4a4a3a"/>
+  <ellipse cx="512" cy="380" rx="180" ry="70" fill="#5c5c4a"/>
+  <path d="M332 380 Q512 320 692 380 Q512 360 332 380" fill="#6b6b58"/>
+  <!-- Helmet rim -->
+  <ellipse cx="512" cy="400" rx="220" ry="30" fill="#3d3d2d"/>
+
+  <!-- Crossed rifles behind helmet -->
+  <g fill="#8b7355">
+    <!-- Left rifle -->
+    <rect x="280" y="280" width="20" height="300" rx="5" transform="rotate(-30 290 430)"/>
+    <rect x="240" y="240" width="30" height="60" rx="5" transform="rotate(-30 255 270)"/>
+    <!-- Right rifle -->
+    <rect x="724" y="280" width="20" height="300" rx="5" transform="rotate(30 734 430)"/>
+    <rect x="754" y="240" width="30" height="60" rx="5" transform="rotate(30 769 270)"/>
+  </g>
+
+  <!-- Year banner -->
+  <rect x="362" y="500" width="300" height="60" rx="10" fill="#8b0000"/>
+  <rect x="367" y="505" width="290" height="50" rx="8" fill="none" stroke="#d4af37" stroke-width="2"/>
+
+  <!-- Text: 1914-1918 -->
+  <text x="512" y="545" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="#d4af37" text-anchor="middle">1914-1918</text>
+
+  <!-- Title: TRENCHES -->
+  <text x="512" y="650" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#d4af37" text-anchor="middle" letter-spacing="8">TRENCHES</text>
+
+  <!-- Decorative laurel leaves -->
+  <g fill="#4a7c59">
+    <!-- Left laurel -->
+    <path d="M180 500 Q160 450 180 400 Q200 450 180 500" />
+    <path d="M160 520 Q130 480 160 440 Q190 480 160 520" />
+    <path d="M145 545 Q110 515 145 485 Q180 515 145 545" />
+    <path d="M135 575 Q95 555 135 535 Q175 555 135 575" />
+    <path d="M130 610 Q85 600 130 590 Q175 600 130 610" />
+
+    <!-- Right laurel -->
+    <path d="M844 500 Q864 450 844 400 Q824 450 844 500" />
+    <path d="M864 520 Q894 480 864 440 Q834 480 864 520" />
+    <path d="M879 545 Q914 515 879 485 Q844 515 879 545" />
+    <path d="M889 575 Q929 555 889 535 Q849 555 889 575" />
+    <path d="M894 610 Q939 600 894 590 Q849 600 894 610" />
+  </g>
+
+  <!-- Stars at corners -->
+  <g fill="#d4af37">
+    <polygon points="512,180 520,200 542,200 524,214 532,236 512,222 492,236 500,214 482,200 504,200" />
+  </g>
+</svg>

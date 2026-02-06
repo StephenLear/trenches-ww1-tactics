@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Trenches: WW1 Tactics</title>
+    <meta name="description" content="Get help and support for Trenches: WW1 Tactics. FAQs, troubleshooting, and contact information.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #1a1a14;
+            --bg-medium: #2a2a1f;
+            --bg-light: #3d3d29;
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --brass: #8b7355;
+            --green: #4a7c59;
+            --red: #8b0000;
+            --text-light: #e8e4d9;
+            --text-medium: #d4d0c4;
+            --text-muted: #8b8b7a;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--bg-medium) 0%, var(--bg-dark) 100%);
+            padding: 20px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+
+        /* Quick Help Boxes */
+        .quick-help {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .help-box {
+            background-color: var(--bg-medium);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--bg-light);
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .help-box:hover {
+            border-color: var(--brass);
+            transform: translateY(-3px);
+        }
+
+        .help-box .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .help-box h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .help-box p {
+            color: var(--text-muted);
+            font-size: 0.95em;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: var(--gold);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .faq-item {
+            background-color: var(--bg-medium);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--bg-light);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: var(--bg-light);
+        }
+
+        .faq-question h4 {
+            color: var(--text-light);
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            color: var(--gold);
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px;
+            color: var(--text-medium);
+        }
+
+        .faq-answer-content p {
+            margin-bottom: 10px;
+        }
+
+        .faq-answer-content ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 5px;
+        }
+
+        /* Troubleshooting Section */
+        .troubleshooting {
+            margin-bottom: 60px;
+        }
+
+        .trouble-item {
+            background-color: var(--bg-medium);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--brass);
+        }
+
+        .trouble-item h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .trouble-item p {
+            color: var(--text-medium);
+            margin-bottom: 10px;
+        }
+
+        .trouble-item ol {
+            margin-left: 20px;
+            color: var(--text-medium);
+        }
+
+        .trouble-item li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--bg-medium);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-section h2 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            color: var(--text-medium);
+            margin-bottom: 25px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background-color: var(--bg-light);
+            color: var(--gold);
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 2px solid var(--brass);
+            transition: all 0.3s;
+        }
+
+        .contact-email:hover {
+            background-color: var(--brass);
+            color: var(--text-light);
+        }
+
+        /* Game Info */
+        .game-info {
+            background-color: var(--bg-medium);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        .game-info h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            padding: 15px;
+            background-color: var(--bg-dark);
+            border-radius: 6px;
+        }
+
+        .info-item label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+
+        .info-item span {
+            color: var(--text-light);
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-medium);
+            padding: 30px 20px;
+            border-top: 2px solid var(--bg-light);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">TRENCHES</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy-policy.html">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>SUPPORT</h1>
+        <p class="subtitle">We're here to help you command your troops to victory</p>
+
+        <!-- Quick Help -->
+        <div class="quick-help">
+            <div class="help-box">
+                <div class="icon">📖</div>
+                <h3>FAQs</h3>
+                <p>Find answers to common questions below</p>
+            </div>
+            <div class="help-box">
+                <div class="icon">🔧</div>
+                <h3>Troubleshooting</h3>
+                <p>Solutions to technical issues</p>
+            </div>
+            <div class="help-box">
+                <div class="icon">✉️</div>
+                <h3>Contact Us</h3>
+                <p>Reach out directly for help</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How do I save my game progress?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Trenches: WW1 Tactics automatically saves your progress after every battle and when you return to the main menu. Your save includes:</p>
+                        <ul>
+                            <li>Campaign progress and completed missions</li>
+                            <li>Veteran soldiers and their experience</li>
+                            <li>Unlocked achievements and medals</li>
+                            <li>Game settings and preferences</li>
+                        </ul>
+                        <p>All data is stored locally on your device.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Does the game require an internet connection?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>No! Trenches: WW1 Tactics is fully playable offline. You don't need an internet connection to play any part of the game. This makes it perfect for commutes, flights, or anywhere without connectivity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How does the supply system work?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Units need to stay connected to supply sources (HQ, depots, trucks) to maintain combat effectiveness. When units are in supply range:</p>
+                        <ul>
+                            <li>They receive resupply each turn</li>
+                            <li>They can heal if not engaged</li>
+                            <li>They maintain full combat modifiers</li>
+                        </ul>
+                        <p>When cut off from supply, units suffer penalties to attack, defense, and morale. Extended isolation causes attrition damage. Keep your supply lines secure!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How do reinforcements work?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>You earn Reinforcement Points (RP) during battle by:</p>
+                        <ul>
+                            <li>Eliminating enemy units</li>
+                            <li>Capturing objectives</li>
+                            <li>Holding objectives each turn</li>
+                            <li>Surviving without losses</li>
+                        </ul>
+                        <p>Spend RP to call in reinforcement packages including infantry, machine gun teams, medics, engineers, and more. Some reinforcements (like tanks and stormtroopers) require specific factions or controlled objectives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What happens to my veteran soldiers if they die?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>If a veteran soldier falls in battle, they are lost permanently. This is by design - it reflects the reality of war and adds weight to your tactical decisions. Protect your experienced soldiers!</p>
+                        <p>Fallen veterans are honored in the Memorial screen, where you can view their service record and the battles they fought in.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How do I reset my campaign progress?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>To reset your campaign and start fresh:</p>
+                        <ol>
+                            <li>Go to Settings from the main menu</li>
+                            <li>Scroll down to find "Reset Campaign"</li>
+                            <li>Confirm the reset when prompted</li>
+                        </ol>
+                        <p><strong>Warning:</strong> This will erase all progress including missions, veterans, and achievements. This action cannot be undone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Is there multiplayer?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Trenches: WW1 Tactics is currently a single-player experience. We focused on creating a deep, historically-inspired campaign with intelligent AI opponents.</p>
+                        <p>Multiplayer may be considered for future updates based on player feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="troubleshooting">
+            <h2 class="section-title">Troubleshooting</h2>
+
+            <div class="trouble-item">
+                <h4>Game is running slowly or lagging</h4>
+                <p>If you experience performance issues:</p>
+                <ol>
+                    <li>Close other apps running in the background</li>
+                    <li>Restart the app</li>
+                    <li>Restart your device</li>
+                    <li>Ensure you have at least 500MB free storage</li>
+                    <li>Try disabling haptic feedback in settings</li>
+                </ol>
+            </div>
+
+            <div class="trouble-item">
+                <h4>Progress not saving</h4>
+                <p>Save issues are rare but can occur:</p>
+                <ol>
+                    <li>Ensure you're returning to the main menu or completing battles (this triggers auto-save)</li>
+                    <li>Check that your device has sufficient storage space</li>
+                    <li>Don't force-close the app during a battle</li>
+                    <li>Try restarting the app</li>
+                </ol>
+            </div>
+
+            <div class="trouble-item">
+                <h4>Audio not working</h4>
+                <p>If sounds or music aren't playing:</p>
+                <ol>
+                    <li>Check that your device isn't on silent/mute mode</li>
+                    <li>Verify sound and music are enabled in game settings</li>
+                    <li>Check your device volume</li>
+                    <li>Try disconnecting and reconnecting headphones/Bluetooth</li>
+                </ol>
+            </div>
+
+            <div class="trouble-item">
+                <h4>App crashes on launch</h4>
+                <p>If the app won't start:</p>
+                <ol>
+                    <li>Ensure your device meets minimum requirements</li>
+                    <li>Try restarting your device</li>
+                    <li>Uninstall and reinstall the app (note: this will erase save data)</li>
+                    <li>Check for app updates in your app store</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Game Info -->
+        <section class="game-info">
+            <h3>Game Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Current Version</label>
+                    <span>1.0.0</span>
+                </div>
+                <div class="info-item">
+                    <label>iOS Requirement</label>
+                    <span>iOS 13.0+</span>
+                </div>
+                <div class="info-item">
+                    <label>Android Requirement</label>
+                    <span>Android 5.0+</span>
+                </div>
+                <div class="info-item">
+                    <label>App Size</label>
+                    <span>~50 MB</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>Still Need Help?</h2>
+            <p>If you couldn't find the answer to your question, please reach out to us directly. We typically respond within 24-48 hours.</p>
+            <a href="mailto:support@example.com" class="contact-email">support@example.com</a>
+            <p style="margin-top: 20px; font-size: 0.9em; color: var(--text-muted);">Please include your device model, OS version, and a description of the issue.</p>
+        </section>
+
+        <!-- Bug Report Template -->
+        <section style="background-color: var(--bg-medium); padding: 30px; border-radius: 8px;">
+            <h3 style="color: var(--gold); margin-bottom: 20px;">Reporting a Bug</h3>
+            <p style="color: var(--text-medium); margin-bottom: 15px;">When reporting a bug, please include:</p>
+            <ul style="color: var(--text-medium); margin-left: 20px;">
+                <li>Device model (e.g., iPhone 15, Samsung Galaxy S23)</li>
+                <li>Operating system version</li>
+                <li>Steps to reproduce the issue</li>
+                <li>What you expected to happen</li>
+                <li>What actually happened</li>
+                <li>Screenshots if possible</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Trenches: WW1 Tactics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

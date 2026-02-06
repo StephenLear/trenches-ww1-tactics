@@ -1,0 +1,122 @@
+WW1 TACTICAL GAME - CONSTANTS EXTRACTION SUMMARY
+================================================
+
+Source File: wwi-tactical-game-phase7-complete.jsx
+Output File: constants.js (903 lines)
+Extraction Date: 2026-02-01
+
+EXTRACTED CONSTANTS (18 exports):
+================================
+
+1. GRID_SIZE
+   - Type: Number
+   - Value: 8
+   
+2. WEATHER_TYPES
+   - Type: Object
+   - Keys: clear, rain, snow, fog, sandstorm
+   - Properties: name, icon, effects
+   
+3. TERRAIN_TYPES
+   - Type: Object
+   - Keys: trench, mountain, water, beach, sand, mud, barbed_wire, objective, crater
+   - Properties: name, defenseBonus, movementCost, special effects
+   - Note: Removed web-specific 'color' (Tailwind classes)
+   
+4. ABILITIES
+   - Type: Object
+   - Keys: rally, flank, dig_in, suppressing_fire, charge, trample, armor_up, crush, barrage, smoke, heal, triage, aimed_shot, relocate
+   - Properties: name, description, cooldown, type
+   
+5. UNIT_TYPES
+   - Type: Object
+   - Keys: infantry, machinegun, officer, scout, cavalry, tank, artillery, medic, sniper
+   - Properties: name, hp, attack, defense, range, move, icon, abilities, special flags
+   
+6. REQUISITION_SHOP
+   - Type: Object
+   - Keys: infantry, scout, machinegun, officer, medic, sniper, cavalry, tank, artillery
+   - Properties: name, cost, type, description
+   
+7. COMMANDER_ABILITIES
+   - Type: Object
+   - Keys: artillery_strike, recon_plane, smoke_barrage, emergency_reinforcements, medical_evac
+   - Properties: name, cost, icon, description, effect, cooldown, maxCooldown
+   
+8. COMMANDER_PERKS
+   - Type: Object
+   - Keys: logistics, veteran_corps, advanced_tactics, field_hospital, artillery_mastery
+   - Properties: name, cost, icon, description, bonus
+   
+9. DIFFICULTY_SETTINGS
+   - Type: Object
+   - Keys: easy, normal, hard, elite
+   - Properties: name, icon, description, modifiers, AI settings, requisitionBonus
+   
+10. TECH_TREE
+    - Type: Object
+    - Keys: improved_rifles, trench_warfare, scout_training, machine_gun_doctrine, medical_advances, artillery_ranging, officer_tactics, tank_armor, sniper_optics, cavalry_charge, combined_arms, advanced_artillery, stormtrooper_tactics
+    - Properties: name, era, cost, icon, description, effect, prerequisite
+    
+11. FACTIONS
+    - Type: Object
+    - Keys: british, french, german, american
+    - Properties: name, flag, description, color, bonuses, unitModifiers
+    
+12. SKIRMISH_PRESETS
+    - Type: Object
+    - Keys: quick_battle, last_stand, assassination, breakthrough, artillery_duel, beach_assault
+    - Properties: name, icon, description, mapSize, terrainType, enemyCount, objectiveType, weather
+    
+13. TERRAIN_PRESETS
+    - Type: Object
+    - Keys: trenches, beach, mountain, open, desert, mixed
+    - Properties: name, primaryTerrain, secondaryTerrain, hazards
+    
+14. RANKS
+    - Type: Object
+    - Keys: private, corporal, sergeant
+    - Properties: name, xpNeeded, icon
+    
+15. FIRST_NAMES
+    - Type: Array<String>
+    - Count: 16 names
+    - Era-appropriate (WWI period)
+    
+16. LAST_NAMES
+    - Type: Array<String>
+    - Count: 16 names
+    - Era-appropriate (British/Allied)
+    
+17. HOMETOWNS
+    - Type: Array<String>
+    - Count: 12 towns
+    - Global locations (UK, US, Australia, Ireland)
+    
+18. BACKSTORIES
+    - Type: Array<String>
+    - Count: 12 backstories
+    - Soldier generation narratives
+
+MODIFICATIONS FROM SOURCE:
+==========================
+- Removed web-specific properties (Tailwind CSS color classes from TERRAIN_TYPES)
+- Removed sound generation code (not needed in constants module)
+- Removed web API references (window.AudioContext)
+- Removed mission/scenario data (kept only constants and presets)
+- Cleaned up formatting for platform-agnostic ES6 module
+
+FORMAT:
+=======
+- All constants exported as ES6 modules (export const)
+- Well-organized with section headers
+- No dependencies on React or web APIs
+- Ready for React Native implementation
+
+USAGE EXAMPLE:
+==============
+import { UNIT_TYPES, GRID_SIZE, WEATHER_TYPES } from './constants.js';
+
+const unitStats = UNIT_TYPES.infantry;
+const gridSize = GRID_SIZE;
+const weatherEffects = WEATHER_TYPES.rain.effects;
