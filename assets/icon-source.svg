@@ -1,79 +1,98 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
   <!-- Background - Dark military khaki -->
-  <rect width="1024" height="1024" fill="#3d3d29"/>
+  <rect width="1024" height="1024" fill="#2d2d20"/>
 
   <!-- Outer border - brass/bronze color -->
   <rect x="20" y="20" width="984" height="984" rx="180" fill="none" stroke="#8b7355" stroke-width="40"/>
 
   <!-- Inner background circle -->
-  <circle cx="512" cy="512" r="420" fill="#2a2a1f"/>
+  <circle cx="512" cy="480" r="380" fill="#1f1f18"/>
 
-  <!-- Trench silhouette at bottom -->
-  <path d="M92 750 L92 850 L200 850 L200 780 L280 780 L280 850 L380 850 L380 800 L450 800 L450 850 L550 850 L550 780 L650 780 L650 850 L750 850 L750 800 L820 800 L820 850 L932 850 L932 750 Z" fill="#1a1a14"/>
+  <!-- German Stahlhelm (M1916 style) -->
+  <g transform="translate(512, 380)">
+    <!-- Main helmet dome -->
+    <ellipse cx="0" cy="0" rx="180" ry="120" fill="#4a4a3a"/>
 
-  <!-- Barbed wire -->
-  <g stroke="#555544" stroke-width="3" fill="none">
-    <path d="M100 720 Q200 700 300 720 Q400 740 500 720 Q600 700 700 720 Q800 740 900 720"/>
-    <path d="M120 740 Q220 760 320 740 Q420 720 520 740 Q620 760 720 740 Q820 720 920 740"/>
-    <!-- Wire barbs -->
-    <g stroke-width="2">
-      <line x1="150" y1="710" x2="160" y2="730"/>
-      <line x1="250" y1="730" x2="260" y2="710"/>
-      <line x1="350" y1="710" x2="360" y2="730"/>
-      <line x1="450" y1="730" x2="460" y2="710"/>
-      <line x1="550" y1="710" x2="560" y2="730"/>
-      <line x1="650" y1="730" x2="660" y2="710"/>
-      <line x1="750" y1="710" x2="760" y2="730"/>
-      <line x1="850" y1="730" x2="860" y2="710"/>
-    </g>
+    <!-- Helmet top highlight -->
+    <ellipse cx="0" cy="-20" rx="150" ry="90" fill="#5c5c4a"/>
+    <ellipse cx="-20" cy="-40" rx="80" ry="50" fill="#686858" opacity="0.5"/>
+
+    <!-- Distinctive Stahlhelm flared rim/skirt -->
+    <path d="M-200 40 Q-210 80 -180 100 L-160 60 Z" fill="#3d3d2d"/>
+    <path d="M200 40 Q210 80 180 100 L160 60 Z" fill="#3d3d2d"/>
+
+    <!-- Side lugs (ventilation horns - iconic Stahlhelm feature) -->
+    <circle cx="-160" cy="0" r="25" fill="#5c5c4a" stroke="#3d3d2d" stroke-width="4"/>
+    <circle cx="-160" cy="0" r="12" fill="#2d2d20"/>
+    <circle cx="160" cy="0" r="25" fill="#5c5c4a" stroke="#3d3d2d" stroke-width="4"/>
+    <circle cx="160" cy="0" r="12" fill="#2d2d20"/>
+
+    <!-- Helmet rim -->
+    <path d="M-190 50 Q-200 90 -170 110 Q0 140 170 110 Q200 90 190 50 Q0 80 -190 50" fill="#3d3d2d"/>
+
+    <!-- Chinstrap attachment points -->
+    <circle cx="-140" cy="70" r="8" fill="#8b7355"/>
+    <circle cx="140" cy="70" r="8" fill="#8b7355"/>
   </g>
-
-  <!-- Central helmet (Brodie style - British) -->
-  <ellipse cx="512" cy="380" rx="200" ry="80" fill="#4a4a3a"/>
-  <ellipse cx="512" cy="380" rx="180" ry="70" fill="#5c5c4a"/>
-  <path d="M332 380 Q512 320 692 380 Q512 360 332 380" fill="#6b6b58"/>
-  <!-- Helmet rim -->
-  <ellipse cx="512" cy="400" rx="220" ry="30" fill="#3d3d2d"/>
 
   <!-- Crossed rifles behind helmet -->
   <g fill="#8b7355">
     <!-- Left rifle -->
-    <rect x="280" y="280" width="20" height="300" rx="5" transform="rotate(-30 290 430)"/>
-    <rect x="240" y="240" width="30" height="60" rx="5" transform="rotate(-30 255 270)"/>
+    <rect x="250" y="200" width="18" height="320" rx="4" transform="rotate(-25 259 360)"/>
+    <rect x="215" y="150" width="28" height="70" rx="6" transform="rotate(-25 229 185)"/>
+    <rect x="360" y="470" width="24" height="50" rx="3" transform="rotate(-25 372 495)"/>
+
     <!-- Right rifle -->
-    <rect x="724" y="280" width="20" height="300" rx="5" transform="rotate(30 734 430)"/>
-    <rect x="754" y="240" width="30" height="60" rx="5" transform="rotate(30 769 270)"/>
+    <rect x="756" y="200" width="18" height="320" rx="4" transform="rotate(25 765 360)"/>
+    <rect x="781" y="150" width="28" height="70" rx="6" transform="rotate(25 795 185)"/>
+    <rect x="640" y="470" width="24" height="50" rx="3" transform="rotate(25 652 495)"/>
   </g>
 
   <!-- Year banner -->
-  <rect x="362" y="500" width="300" height="60" rx="10" fill="#8b0000"/>
-  <rect x="367" y="505" width="290" height="50" rx="8" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <rect x="332" y="540" width="360" height="70" rx="12" fill="#8b0000"/>
+  <rect x="338" y="546" width="348" height="58" rx="10" fill="none" stroke="#d4af37" stroke-width="3"/>
 
   <!-- Text: 1914-1918 -->
-  <text x="512" y="545" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="#d4af37" text-anchor="middle">1914-1918</text>
+  <text x="512" y="592" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#d4af37" text-anchor="middle">1914 — 1918</text>
 
   <!-- Title: TRENCHES -->
-  <text x="512" y="650" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#d4af37" text-anchor="middle" letter-spacing="8">TRENCHES</text>
+  <text x="512" y="700" font-family="Georgia, serif" font-size="80" font-weight="bold" fill="#d4af37" text-anchor="middle" letter-spacing="6">TRENCHES</text>
 
-  <!-- Decorative laurel leaves -->
-  <g fill="#4a7c59">
-    <!-- Left laurel -->
-    <path d="M180 500 Q160 450 180 400 Q200 450 180 500" />
-    <path d="M160 520 Q130 480 160 440 Q190 480 160 520" />
-    <path d="M145 545 Q110 515 145 485 Q180 515 145 545" />
-    <path d="M135 575 Q95 555 135 535 Q175 555 135 575" />
-    <path d="M130 610 Q85 600 130 590 Q175 600 130 610" />
+  <!-- Subtitle -->
+  <text x="512" y="755" font-family="Georgia, serif" font-size="32" fill="#8b7355" text-anchor="middle" letter-spacing="12">WW1 TACTICS</text>
 
-    <!-- Right laurel -->
-    <path d="M844 500 Q864 450 844 400 Q824 450 844 500" />
-    <path d="M864 520 Q894 480 864 440 Q834 480 864 520" />
-    <path d="M879 545 Q914 515 879 485 Q844 515 879 545" />
-    <path d="M889 575 Q929 555 889 535 Q849 555 889 575" />
-    <path d="M894 610 Q939 600 894 590 Q849 600 894 610" />
+  <!-- Iron Cross at top (iconic German WW1 symbol) -->
+  <g transform="translate(512, 160)" fill="#3d3d2d" stroke="#8b7355" stroke-width="3">
+    <path d="M0,-45 L15,-15 L45,-15 L20,5 L30,45 L0,25 L-30,45 L-20,5 L-45,-15 L-15,-15 Z"/>
   </g>
 
-  <!-- Stars at corners -->
-  <g fill="#d4af37">
-    <polygon points="512,180 520,200 542,200 524,214 532,236 512,222 492,236 500,214 482,200 504,200" />
+  <!-- Decorative oak leaves (German military tradition) -->
+  <g fill="#4a6b3a">
+    <!-- Left oak leaves -->
+    <path d="M150 500 Q120 470 140 430 Q160 470 180 450 Q160 490 150 500"/>
+    <path d="M130 550 Q95 530 115 490 Q140 520 160 500 Q140 545 130 550"/>
+    <path d="M115 600 Q75 590 100 550 Q125 575 145 555 Q125 595 115 600"/>
+
+    <!-- Right oak leaves -->
+    <path d="M874 500 Q904 470 884 430 Q864 470 844 450 Q864 490 874 500"/>
+    <path d="M894 550 Q929 530 909 490 Q884 520 864 500 Q884 545 894 550"/>
+    <path d="M909 600 Q949 590 924 550 Q899 575 879 555 Q899 595 909 600"/>
+  </g>
+
+  <!-- Barbed wire at bottom -->
+  <g stroke="#555544" stroke-width="3" fill="none">
+    <path d="M100 820 Q200 800 300 820 Q400 840 500 820 Q600 800 700 820 Q800 840 900 820"/>
+    <path d="M120 850 Q220 870 320 850 Q420 830 520 850 Q620 870 720 850 Q820 830 920 850"/>
+    <!-- Wire barbs -->
+    <g stroke-width="2">
+      <line x1="150" y1="810" x2="165" y2="830"/>
+      <line x1="250" y1="830" x2="265" y2="810"/>
+      <line x1="350" y1="810" x2="365" y2="830"/>
+      <line x1="450" y1="830" x2="465" y2="810"/>
+      <line x1="550" y1="810" x2="565" y2="830"/>
+      <line x1="650" y1="830" x2="665" y2="810"/>
+      <line x1="750" y1="810" x2="765" y2="830"/>
+      <line x1="850" y1="830" x2="865" y2="810"/>
+    </g>
   </g>
 </svg>

@@ -55,6 +55,10 @@ const BattleScreen = ({ route, navigation }) => {
   // Animation states for units (key is unit.id)
   const [unitAnimations, setUnitAnimations] = useState({});
 
+  // Undo state - stores previous turn state for undo functionality
+  const [undoState, setUndoState] = useState(null);
+  const [canUndo, setCanUndo] = useState(false);
+
   // Radio chatter display
   const [currentChatter, setCurrentChatter] = useState(null);
 
@@ -199,6 +203,28 @@ const BattleScreen = ({ route, navigation }) => {
     }
   };
 
+  // Save state for undo before any action
+  const saveUndoState = () => {
+    setUndoState({
+      units: JSON.parse(JSON.stringify(units)),
+      log: [...log],
+    });
+    setCanUndo(true);
+  };
+
+  // Undo last action (move or attack)
+  const handleUndo = () => {
+    if (!undoState || !canUndo) return;
+
+    setUnits(undoState.units);
+    setLog(undoState.log);
+    setSelected(null);
+    setHighlights([]);
+    setCanUndo(false);
+    addLog('Action undone');
+    playSFX('click');
+  };
+
   const handleUnitSelect = (unit) => {
     if (unit.hasMoved && unit.hasAttacked) {
       addLog(`${unit.name || unit.type} has already acted this turn`);
@@ -226,6 +252,9 @@ const BattleScreen = ({ route, navigation }) => {
   };
 
   const handleMove = (unit, newX, newY) => {
+    // Save state for undo before moving
+    saveUndoState();
+
     // Play movement sound
     playSFX('move', 0.5);
 
@@ -253,6 +282,9 @@ const BattleScreen = ({ route, navigation }) => {
   };
 
   const handleAttack = (attacker, defender) => {
+    // Save state for undo before attacking
+    saveUndoState();
+
     // Trigger attack animation on attacker
     triggerAnimation(attacker.id, 'attack');
     hapticAttack(); // Haptic feedback on attack
@@ -700,14 +732,27 @@ const BattleScreen = ({ route, navigation }) => {
           <BattleLog messages={log} maxMessages={5} />
         </View>
 
-        {/* End Turn Button */}
+        {/* Action Buttons */}
         {phase === 'player' && (
-          <TouchableOpacity
-            style={styles.endTurnButton}
-            onPress={handleEndTurn}
-          >
-            <Text style={styles.endTurnText}>End Turn →</Text>
-          </TouchableOpacity>
+          <View style={styles.actionButtons}>
+            {/* Undo Button */}
+            {canUndo && (
+              <TouchableOpacity
+                style={styles.undoButton}
+                onPress={handleUndo}
+              >
+                <Text style={styles.undoText}>↩ Undo</Text>
+              </TouchableOpacity>
+            )}
+
+            {/* End Turn Button */}
+            <TouchableOpacity
+              style={[styles.endTurnButton, canUndo && styles.endTurnButtonWithUndo]}
+              onPress={handleEndTurn}
+            >
+              <Text style={styles.endTurnText}>End Turn →</Text>
+            </TouchableOpacity>
+          </View>
         )}
       </View>
     </SafeAreaView>
@@ -781,12 +826,34 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: COLORS.border,
   },
+  actionButtons: {
+    flexDirection: 'row',
+    gap: SPACING.small,
+    marginTop: SPACING.small,
+  },
+  undoButton: {
+    backgroundColor: COLORS.backgroundLight,
+    borderRadius: RADIUS.medium,
+    paddingVertical: SPACING.medium,
+    paddingHorizontal: SPACING.large,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  undoText: {
+    fontSize: FONT_SIZES.medium,
+    fontWeight: '600',
+    color: COLORS.textSecondary,
+  },
   endTurnButton: {
+    flex: 1,
     backgroundColor: COLORS.primary,
     borderRadius: RADIUS.medium,
     paddingVertical: SPACING.medium,
     alignItems: 'center',
-    marginTop: SPACING.small,
+  },
+  endTurnButtonWithUndo: {
+    flex: 1,
   },
   endTurnText: {
     fontSize: FONT_SIZES.large,
