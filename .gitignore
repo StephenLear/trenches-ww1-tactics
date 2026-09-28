@@ -62,3 +62,5 @@ temp/
 /store/raw/
 /store/out/
 __pycache__/
+/store/backup_1.0.1/
+/store/upload/
