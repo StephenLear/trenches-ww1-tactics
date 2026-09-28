@@ -2,7 +2,7 @@
 
 All notable changes to Trenches: WW1 Tactics. Dates are App Store Connect / build dates.
 
-## [1.0.2] — in App Store Connect, not yet submitted for review (build 6, 2026-09-28)
+## [1.0.2] — submitted for review 2026-09-28 (build 6)
 
 ### Added
 - App Store rating prompt after the 2nd, 5th and 10th mission won (`expo-store-review`, iOS rate-limits it).
