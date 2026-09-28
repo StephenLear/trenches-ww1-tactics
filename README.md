@@ -23,7 +23,7 @@
 ## Features
 
 - **Authentic WWI Combat** - Command infantry, machine gunners, snipers, cavalry, and tanks
-- **20 Campaign Missions** - Fight at Verdun, the Somme, Vimy Ridge, and more iconic battles
+- **25 Campaign Missions** - Fight at Verdun, the Somme, Vimy Ridge, and more iconic battles
 - **4 Playable Nations** - British, French, German, and American forces
 - **Supply Line System** - Keep your troops supplied to maintain combat effectiveness
 - **Reinforcement System** - Call in reserves mid-battle to turn the tide

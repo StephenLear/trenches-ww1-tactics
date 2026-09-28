@@ -3,21 +3,23 @@
  * Generate period-appropriate newspaper headlines for battle results
  */
 
+import { dateAfterMission } from './periodDates';
+
 // Newspaper names by faction
 export const NEWSPAPERS = {
   british: [
-    { name: 'The Times', tagline: 'London' },
-    { name: 'The Daily Telegraph', tagline: 'Fleet Street' },
-    { name: 'The Daily Mail', tagline: 'London Edition' },
-    { name: 'The Manchester Guardian', tagline: 'Manchester' },
-    { name: 'The Evening Standard', tagline: 'London' },
+    { name: 'The Morning Post', tagline: 'London' },
+    { name: 'The Daily Chronicle', tagline: 'Fleet Street' },
+    { name: 'The Pall Mall Gazette', tagline: 'London Edition' },
+    { name: 'The Westminster Gazette', tagline: 'London' },
+    { name: 'The Daily Sketch', tagline: 'London' },
   ],
   french: [
-    { name: 'Le Figaro', tagline: 'Paris' },
     { name: 'Le Petit Parisien', tagline: 'Paris' },
     { name: 'Le Matin', tagline: 'Edition du Matin' },
-    { name: 'L\'Humanité', tagline: 'Paris' },
     { name: 'Le Journal', tagline: 'Edition Spéciale' },
+    { name: 'L\'Écho de Paris', tagline: 'Paris' },
+    { name: 'Le Gaulois', tagline: 'Paris' },
   ],
   german: [
     { name: 'Berliner Tageblatt', tagline: 'Berlin' },
@@ -27,11 +29,9 @@ export const NEWSPAPERS = {
     { name: 'Deutsche Allgemeine Zeitung', tagline: 'Berlin' },
   ],
   american: [
-    { name: 'The New York Times', tagline: 'New York' },
-    { name: 'The Washington Post', tagline: 'Washington D.C.' },
-    { name: 'Chicago Tribune', tagline: 'Chicago' },
-    { name: 'The Boston Globe', tagline: 'Boston' },
-    { name: 'Stars and Stripes', tagline: 'AEF Edition' },
+    { name: 'The New York Herald', tagline: 'New York' },
+    { name: 'The Evening World', tagline: 'New York' },
+    { name: 'The New York Tribune', tagline: 'New York' },
   ],
 };
 
@@ -174,15 +174,11 @@ const MONTHS = [
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 /**
- * Generate a newspaper date string (1914-1918 period)
+ * Newspaper date string, printed a few days after the mission
  */
-const generateNewspaperDate = () => {
-  const year = 1914 + Math.floor(Math.random() * 5);
-  const month = Math.floor(Math.random() * 12);
-  const day = 1 + Math.floor(Math.random() * 28);
-  const dayOfWeek = Math.floor(Math.random() * 7);
-
-  return `${DAYS[dayOfWeek]}, ${MONTHS[month]} ${day}, ${year}`;
+const generateNewspaperDate = (missionDate) => {
+  const date = dateAfterMission(missionDate);
+  return `${DAYS[date.getDay()]}, ${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
 /**
@@ -199,6 +195,7 @@ export const generateHeadline = (battleResult) => {
     veteranName = null,
     usedTanks = false,
     usedArtillery = false,
+    missionDate = null,
   } = battleResult;
 
   // Select newspaper
@@ -266,7 +263,7 @@ export const generateHeadline = (battleResult) => {
 
   return {
     newspaper,
-    date: generateNewspaperDate(),
+    date: generateNewspaperDate(missionDate),
     headline,
     subheadlines: subheadlines.slice(0, 3), // Max 3 subheadlines
     articleSnippets,

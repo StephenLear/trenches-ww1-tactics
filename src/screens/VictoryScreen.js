@@ -22,6 +22,7 @@ import { MEDALS, checkNewMedals, getDefaultMedalStats } from '../game/medals';
 import { playSFX } from '../audio/AudioManager';
 import { generateHeadline } from '../game/newspaperHeadlines';
 import { generateLetter } from '../game/lettersHome';
+import * as StoreReview from 'expo-store-review';
 
 const VictoryScreen = ({ route, navigation }) => {
   const {
@@ -87,6 +88,7 @@ const VictoryScreen = ({ route, navigation }) => {
         veteranName: null,
         usedTanks: false,
         usedArtillery: false,
+        missionDate: mission?.date,
       });
       setNewspaperHeadline(headline);
 
@@ -104,6 +106,7 @@ const VictoryScreen = ({ route, navigation }) => {
         rank: survivor.rank || 'Private',
         victory: true,
         losses: casualties,
+        missionDate: mission?.date,
       });
       setLetterHome(letter);
 
@@ -165,6 +168,13 @@ const VictoryScreen = ({ route, navigation }) => {
 
       // Track diary entries
       newStats.diaryEntriesUnlocked = gameState.completedMissions?.length || 0;
+
+      // Ask for a rating after the 2nd, 5th and 10th mission won (iOS limits how often it shows)
+      if ([2, 5, 10].includes(newStats.missionsCompleted)) {
+        setTimeout(async () => {
+          if (await StoreReview.hasAction()) StoreReview.requestReview();
+        }, 2500);
+      }
 
       // Check for newly unlocked medals
       const unlocked = checkNewMedals(oldStats, newStats);
@@ -540,7 +550,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   statGood: {
-    color: COLORS.success,
+    color: '#6abf4b', // COLORS.success is too dark to read on the card
   },
   statOk: {
     color: COLORS.warning,

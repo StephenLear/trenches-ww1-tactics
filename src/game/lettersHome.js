@@ -3,6 +3,8 @@
  * Soldiers write letters based on battle events
  */
 
+import { dateAfterMission } from './periodDates';
+
 // Letter templates by occasion
 const LETTER_TEMPLATES = {
   // After victory
@@ -209,6 +211,7 @@ export const generateLetter = (params) => {
     rank = 'Private',
     victory = null,
     losses = 0,
+    missionDate = null,
   } = params;
 
   // Determine occasion type
@@ -267,10 +270,7 @@ export const generateLetter = (params) => {
   const fullLetter = `${openingWithSpouse}\n\n${body}\n\n${closingText}`;
 
   // Generate letter metadata
-  const letterDate = new Date();
-  letterDate.setFullYear(1914 + Math.floor(Math.random() * 5));
-  letterDate.setMonth(Math.floor(Math.random() * 12));
-  letterDate.setDate(1 + Math.floor(Math.random() * 28));
+  const letterDate = dateAfterMission(missionDate, 5);
 
   return {
     content: fullLetter,

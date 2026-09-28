@@ -7,7 +7,7 @@
 Turn-Based WWI Strategy Game
 
 ## Short Description (Google Play - 80 chars)
-Command troops in WWI tactical battles. 20 missions, 4 nations, historic combat.
+Command troops in WWI tactical battles. 25 missions, 4 nations, historic combat.
 
 ---
 
@@ -31,7 +31,7 @@ Trenches: WW1 Tactics is a turn-based tactical strategy game that puts you in co
 - Flank enemies and exploit weaknesses
 
 **Compelling Campaign**
-- 20 missions spanning 1914-1918
+- 25 missions spanning 1914-1918
 - Play as British, French, German, or American forces
 - Experience iconic battles: Verdun, the Somme, Vimy Ridge, and more
 
@@ -68,7 +68,7 @@ ww1,strategy,tactics,war,turn-based,military,trench,history,wwi,commander,army,b
 
 ## What's New (Version 1.0.0)
 Initial release featuring:
-- 20 campaign missions
+- 25 campaign missions
 - 4 playable nations
 - Supply and reinforcement systems
 - Weather effects
