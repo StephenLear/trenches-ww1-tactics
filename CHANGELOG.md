@@ -19,7 +19,7 @@ All notable changes to Trenches: WW1 Tactics. Dates are App Store Connect / buil
 
 ### Store listing (1.0.2 draft)
 - New screenshots 1–3 from real gameplay (Battle, Briefing, Victory) + snow battle; dropped 3 old shots.
-- Removed both AI-art preview videos; added a 28 s gameplay preview.
+- Removed both AI-art preview videos. A 28 s gameplay preview was made (`store/out/preview_886x1920_small.mp4`) but pulled because Apple's processing blocked submission; add it in 1.0.3.
 - What's New text added.
 
 ### Repo / infrastructure
