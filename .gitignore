@@ -61,3 +61,4 @@ temp/
 # Store screenshot sources and renders (kept local)
 /store/raw/
 /store/out/
+__pycache__/
