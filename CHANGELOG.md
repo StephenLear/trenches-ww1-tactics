@@ -22,6 +22,10 @@ All notable changes to Trenches: WW1 Tactics. Dates are App Store Connect / buil
 - Removed both AI-art preview videos. A 28 s gameplay preview was made (`store/out/preview_886x1920_small.mp4`) but pulled because Apple's processing blocked submission; add it in 1.0.3.
 - What's New text added.
 
+### Marketing (alongside 1.0.2)
+- Vercel landing page rewritten from a pre-launch "Pre-Register" page to an accurate "out now" page with App Store links; fake email form removed.
+- Instagram: name, bio and link order updated; 10 AI-avatar videos archived; gameplay Reel posted and 3 posts pinned (2026-09-29).
+
 ### Repo / infrastructure
 - Repo re-linked to EAS project; `ascAppId` set for `eas submit`; EAS image `latest`.
 - `ios/`, `android/`, store working folders git-ignored.

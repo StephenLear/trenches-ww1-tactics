@@ -78,7 +78,17 @@ eas submit --platform ios --profile production --latest   # uploads to App Store
 
 - Screenshots: 6.9" set (1290×2796) only; 6.5" slot is set to "Using 6.9" Display". iPad set is still Feb 2026 raw simulator shots.
 - `store/compose.py` builds captioned screenshots from raw phone captures (Baskerville, dark `#0F0B08` → `#1A1410` gradient, khaki `#C8A96E`, cream `#F0E8D8`).
-- App preview: `store/out/preview_886x1920_small.mp4` — 28 s gameplay cut from a phone screen recording (Apple requires captured app footage only).
+- App preview: none live. `store/out/preview_886x1920_small.mp4` (28 s gameplay cut from a phone screen recording; Apple requires captured app footage only) is ready for 1.0.3. The same video at full quality (`preview_886x1920.mp4`) is the pinned Instagram Reel.
+- Live listing (1.0.2): 10 screenshots, in order: Battle, Briefing, Victory, snow battle, No Ads, 4 art shots, cavalry battle. Previous set backed up in `store/backup_1.0.1/` (local only).
+
+## Marketing channels
+
+| Channel | Handle | State (2026-09-29) |
+|---|---|---|
+| Instagram | @ww1trenches_strategy | Name "Trenches: WW1 Tactics"; bio "Turn-based WW1 strategy for iPhone ⚔️ 25 missions · 1914–1918 · Free · No ads 👇"; App Store link first. 10 AI-avatar videos archived (not deleted). Pinned: gameplay Reel (29 Sep), "Fix bayonets" clip (16 Mar), "The Trenches Are Open" card (23 Feb). Gameplay-only from here on. Chrome is signed in to locosnap_app, so profile changes are made on Stephen's phone. |
+| X | @WW1TrenchesApp | 2 followers. Bio link → Vercel landing page. Low priority. |
+| TikTok | none | No Trenches account exists. |
+| Website | ww1-trenches-game.vercel.app | Accurate "out now" page with App Store links (redeployed 2026-09-28). |
 
 ## Known constraints
 
