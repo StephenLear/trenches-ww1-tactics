@@ -2,7 +2,7 @@
 
 All notable changes to Trenches: WW1 Tactics. Dates are App Store Connect / build dates.
 
-## [1.0.2] — approved 2026-09-29, automatic release (build 6)
+## [1.0.2] — released 2026-09-29 (build 6)
 
 ### Added
 - App Store rating prompt after the 2nd, 5th and 10th mission won (`expo-store-review`, iOS rate-limits it).
@@ -17,7 +17,7 @@ All notable changes to Trenches: WW1 Tactics. Dates are App Store Connect / buil
 - iOS build on Xcode 26: `plugins/withFmtCxx17.js` compiles the `fmt` pod as C++17.
 - App icon restored to the live 1.0.1 icon (Pickelhaube in clouds) — the repo had the older February icon.
 
-### Store listing (1.0.2 draft)
+### Store listing
 - New screenshots 1–3 from real gameplay (Battle, Briefing, Victory) + snow battle; dropped 3 old shots.
 - Removed both AI-art preview videos. A 28 s gameplay preview was made (`store/out/preview_886x1920_small.mp4`) but pulled because Apple's processing blocked submission; add it in 1.0.3.
 - What's New text added.
